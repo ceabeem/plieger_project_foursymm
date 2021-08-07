@@ -1,0 +1,268 @@
+@extends ('layouts.teamleader_layout')
+
+@section ('page-styles')
+<!-- <link rel="stylesheet" href="{{ asset('assets/global/plugins/ekko-lightbox/ekko-lightbox.min.css') }}"> -->
+@endsection
+
+@section('content')
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="{{url('/teamleader/dashboard')}}">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Review</span>
+        </li>
+    </ul>
+    
+</div>
+<!-- END PAGE BAR -->
+<!-- BEGIN PAGE TITLE-->
+<h1 class="page-title">Review List
+    <!-- <small>front end banners</small> -->
+</h1>
+<!-- END PAGE TITLE-->
+<!-- END PAGE HEADER-->
+<!-- BEGIN DASHBOARD STATS 1-->
+
+<div class="row margin-bottom-30">
+    <div class="col-md-3 pull-right">
+        
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-11">
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-settings font-black"></i>
+                        <span class="caption-subject font-black sbold uppercase">Review List</span>
+                    </div>
+                    <div class="col-md-3 pull-right">
+                        <input type="text" name="search"  id="search" class="form-control pull-right " placeholder="Search.."> 
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    
+                        <div class="table-scrollable">
+                            <div id="user_data" >
+                                @include('TeamLeader.Review.review_page')
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- add slider modal -->
+<div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Assign Review</h4>
+            </div>
+            <form action=""  id="addTask" class="horizontal-form">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Task Name</label>
+                                    <input type="text" class="form-control" name="task_name" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    <label class="control-label">Assigned To</label>
+                                        <select class="form-control" name="member_id">
+                                            <option value ="">Choose a Member</option>
+                                        </select> 
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Assigned Date</label>
+                                    <input type="date" class="form-control" name="assigned_date" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn green ladda-button" data-style="expand-left"><span class="ladda-label">Submit</span></button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- end of add slider modal -->
+@endsection
+
+@section ('page-scripts')
+<script type="text/javascript">
+function appendCommunityServices(review) {
+            console.log(review);
+            location.reload();
+           
+        }
+
+$(document).on('click', '.editBtn', function(event) {
+            var e = $(this);
+            var dialog = bootbox.dialog({
+                    title: "Edit Team",
+                    message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>',
+                }
+            );
+
+            dialog.init(function(){
+                setTimeout(function(){
+                    var reviewID = e.closest('tr').attr('data-reviewID');
+                    var rowIndex = e.closest('tr').index();
+                    var url = 'review/' + reviewID + '/edit';
+                    
+                    var task = "";
+                    $.ajax({
+                        url:url,
+                        type:'get',
+                        async:false,
+                        success:function(res) {
+                            review = res.review;
+                        }
+                    });
+                    
+                    
+                  var html = '<form action="" id="editreviewform" class="horizontal-form" data-rowIndex="'+rowIndex+'">'+
+                    '{{ csrf_field() }}'+
+                        '<input type="hidden" value="'+review.id+'" name="id">'+
+                        '<div class="modal-body">'+
+                    '<div class="form-body">'+  
+                    '<div class="row">'+
+                            '<div class="col-md-12">'+
+                                '<div class="form-group">'+
+                                    '<label class="control-label">Remarks</label>'+
+                                    '<textarea required class="form-control"  value="" name="issue_remark"  cols="30" rows="10" required>'+((review.issue_remark == null)?"":review.issue_remark)+'</textarea>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+ 
+                    '</div>'+
+                '</div>'+
+                '<div class="modal-footer">'+
+                    '<select class="form-control" style="margin-bottom:3%" name="priority" required>'+
+                            '<option value ="">Priority</option>'+
+                                            '<option value="1">Normal</option>'+
+                                            '<option value="2">Important</option>'+
+                                            '<option value="3">Urgent</option>'+
+                                         '</select> '+
+                    '<button type="button" class="btn dark btn-outline" data-dismiss="modal">Cancel</button>'+
+                    '<input class="btn green" type="submit" value="Update">'+
+                '</div>'+
+                        '</form>';
+                    dialog.find('.bootbox-body').html(html);
+                }, 500);
+            });
+        });
+
+        $(document).on('submit', '#editreviewform', function(event) {
+           event.preventDefault();
+           var form = $(this);
+           var formData = form.serialize();
+
+           $.ajax({
+               url: "review/update",
+               type: 'POST',
+               data: formData,
+               success: function(res) {
+                   if (res.status === 1) {
+                       var review = res.review;
+                        form.closest('.modal').modal('hide');
+                        appendCommunityServices(review);
+                        toastr.success('Issue Reported.');
+                   }
+               }
+           }); 
+        });
+
+$(document).on('click', '.delBtn', function(event) {
+
+var e = $(this);
+var item = e.closest('tr');
+var reviewID = e.closest('tr').attr('data-reviewID');
+
+bootbox.confirm({
+    message: "Are you sure you want to Send For Review?",
+    buttons: {
+        confirm: {
+            label: 'Yes',
+            className: 'btn green'
+        },
+        cancel: {
+            label: 'No',
+            className: 'btn red'
+        }
+    },
+    callback: function (result) {
+        if (result) {
+            var url = 'review/done/'+ reviewID;
+
+            $.ajax({
+                url: url,
+                type: 'get',
+                async: false,
+                success: function(res) {
+                    if (res.status === 1) {
+                        item.remove();
+                        toastr.success('The Task has been Sent For Review.');
+                    } else {
+                        toastr.error('Something went wrong. Please try again.');
+                    }
+                }
+            });
+        }
+    }
+});
+});
+      $(document).ready(function(){
+                $(document).on('click','.pagination a', function(event){
+                    event.preventDefault();
+                    var page = $(this).attr('href').split('page=')[1];
+                    getMoreReviews(page);
+                });
+
+                $("#search").on('keyup', function(){
+                    getMoreReviews(1);
+                })
+            });
+            
+            function getMoreReviews(page)
+            {
+                var search = $("#search").val();
+                $.ajax
+                ({
+                    type : 'GET',
+                    url : "{{ route('teamleader.reviewcontroller.getMoreReviews')}}"+"?page="+page,
+                    data : {
+                        'search_query' : search
+                    },
+                    success:function(data){
+                        $('#user_data').html(data);
+                    }
+                })
+            }
+       
+
+    </script>
+@endsection
