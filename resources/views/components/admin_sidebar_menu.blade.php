@@ -85,10 +85,10 @@
                                 if((Request::routeIs('admin.task',))){
                                     echo ((Request::routeIs('admin.task'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.reviewpending',))){
+                                if((Request::routeIs('admin.reviewpending'))){
                                     echo ((Request::routeIs('admin.reviewpending'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.pliegerreview',))){
+                                if((Request::routeIs('admin.pliegerreview'))){
                                     echo ((Request::routeIs('admin.pliegerreview'))? 'start active open': '') ;
                                 }
                                 if((Request::routeIs('admin.review',))){
@@ -175,28 +175,28 @@
             </li>
             <li class="nav-item 
                             <?php 
-                                if((Request::routeIs('GIS.tasksummary',))){
+                                if((Request::routeIs('GIS.tasksummary'))){
                                 echo ((Request::routeIs('GIS.tasksummary'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.task',))){
+                                if((Request::routeIs('GIS.task'))){
                                     echo ((Request::routeIs('GIS.task'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.reviewpending',))){
+                                if((Request::routeIs('GIS.reviewpending'))){
                                     echo ((Request::routeIs('GIS.reviewpending'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.pliegerreview',))){
+                                if((Request::routeIs('GIS.pliegerreview'))){
                                     echo ((Request::routeIs('GIS.pliegerreview'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.review',))){
+                                if((Request::routeIs('GIS.review'))){
                                     echo ((Request::routeIs('GIS.review'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.finish',))){
+                                if((Request::routeIs('GIS.finish'))){
                                     echo ((Request::routeIs('GIS.finish'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.upload',))){
+                                if((Request::routeIs('GIS.upload'))){
                                     echo ((Request::routeIs('GIS.upload'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.issue',))){
+                                if((Request::routeIs('GIS.issue'))){
                                     echo ((Request::routeIs('GIS.issue'))? 'start active open': '') ;
                                 }
                             ?>">
