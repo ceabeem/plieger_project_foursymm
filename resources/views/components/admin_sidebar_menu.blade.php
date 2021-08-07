@@ -79,7 +79,7 @@
             </li>
             <li class="nav-item 
                             <?php 
-                                if((Request::routeIs('admin.tasksummary',))){
+                                if((Request::routeIs('admin.tasksummary'))){
                                 echo ((Request::routeIs('admin.tasksummary'))? 'start active open': '') ;
                                 }
                                 if((Request::routeIs('admin.task',))){
