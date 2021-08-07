@@ -82,7 +82,7 @@
                                 if((Request::routeIs('admin.tasksummary'))){
                                 echo ((Request::routeIs('admin.tasksummary'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.task',))){
+                                if((Request::routeIs('admin.task'))){
                                     echo ((Request::routeIs('admin.task'))? 'start active open': '') ;
                                 }
                                 if((Request::routeIs('admin.reviewpending'))){
@@ -91,16 +91,16 @@
                                 if((Request::routeIs('admin.pliegerreview'))){
                                     echo ((Request::routeIs('admin.pliegerreview'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.review',))){
+                                if((Request::routeIs('admin.review'))){
                                     echo ((Request::routeIs('admin.review'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.finish',))){
+                                if((Request::routeIs('admin.finish'))){
                                     echo ((Request::routeIs('admin.finish'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.upload',))){
+                                if((Request::routeIs('admin.upload'))){
                                     echo ((Request::routeIs('admin.upload'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('admin.issue',))){
+                                if((Request::routeIs('admin.issue'))){
                                     echo ((Request::routeIs('admin.issue'))? 'start active open': '') ;
                                 }
                             ?>">
