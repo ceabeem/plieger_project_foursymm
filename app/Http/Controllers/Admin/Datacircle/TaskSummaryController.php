@@ -84,7 +84,7 @@ class TaskSummaryController extends Controller
                     yield $user;
                 }
             }
-            $result1=DB::select(DB::raw("SELECT `id` as 'Task ID',`task_name` as 'Task Name',`assigned_member` as 'Assigned Member',`team_name` as 'Team Name',`review_assigned_member` as 'Review Assign Member',`status` as 'File_Status',`issue_remark`as 'Issue Remark' FROM `tasks` WHERE 1"));
+            $result1=DB::select(DB::raw("SELECT `id` as 'Task ID',`task_name` as 'Task Name',`assigned_member` as 'Assigned Member',`team_name` as 'Team Name',`review_assigned_member` as 'Review Assign Member',`status` as 'File_Status',`issue_remark`as 'Issue Remark' FROM `tasks` WHERE  `project_id`=1"));
             foreach ($result1 as $tmp) {
                 if ($tmp->File_Status==1){
                     $tmp->File_Status='Assign';
@@ -105,7 +105,7 @@ class TaskSummaryController extends Controller
                     $tmp->File_Status='Issue File';
                 }
             }
-            $result2=DB::select(DB::raw("SELECT tasks.task_name as 'Task Name',members.name as 'Assign Member Name',records.assign,records.assign_cmplt,records.reassign,records.review,records.review_cmplt,records.issue,records.finish,records.updated_at as 'Date' FROM records,tasks,members WHERE records.task_id=tasks.id and records.user_id=members.id"));
+            $result2=DB::select(DB::raw("SELECT tasks.task_name as 'Task Name',members.name as 'Assign Member Name',records.assign,records.assign_cmplt,records.reassign,records.review,records.review_cmplt,records.issue,records.finish,records.updated_at as 'Date' FROM records,tasks,members WHERE records.task_id=tasks.id and records.user_id=members.id and `project_id`=1"));
             foreach ($result2 as $tmp1) {
                 if ($tmp1->assign==1){
                     $tmp1->File_Status='assign';
