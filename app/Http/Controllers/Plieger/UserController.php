@@ -50,7 +50,7 @@ class UserController extends Controller
 	{
 		$this->validate($request,[
             'name' => 'required',
-            'mobile' => 'required|numeric|regex:/^(9)[0-9]{9}$/',
+            'mobile' => 'required|min:6',
             'email' => 'required|email'
 		]);
 		$checkemail = Admin::where('email', $request->email)->first();

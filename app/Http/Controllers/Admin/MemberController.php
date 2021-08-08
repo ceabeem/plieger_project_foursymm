@@ -43,7 +43,7 @@ class MemberController extends Controller
             'name' => 'required',
             'password' => 'required|min:6|regex:/^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$/',
             'email' => 'required|email',
-            'mobile_no'=>'numeric|regex:/^(9)[0-9]{9}$/'
+            'mobile_no'=>'required|min:6'
         ]); 
         $status = 0;
        $checkemail = Member::where('email', $request->email)->first();
@@ -144,7 +144,7 @@ class MemberController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'email' => 'required|email',
-            'mobile_no'=>'numeric|regex:/^(9)[0-9]{9}$/'
+            'mobile_no'=>'numeric|min:6'
         ]);
         if(isset($request->image_dimension) && !empty($request->image_dimension)) {
             $image_dimension = json_decode($request->image_dimension);
