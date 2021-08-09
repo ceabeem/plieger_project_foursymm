@@ -102,16 +102,8 @@
                                                         </strong>
                                                     </td>
                                                     <td class="text-primary">
-                                                    @if($admin['role_id'] == 1)
-                                                        {{'Supervisor'}}
-                                                    @elseif($admin['role_id'] == 2)
-                                                        {{'Team Member'}}
-                                                    @elseif($admin['role_id'] == 3)
-                                                        {{'Team Leader'}}
-                                                    @elseif($admin['role_id'] == 4)
-                                                        {{'Staff'}}
-                                                    @elseif($admin['role_id'] == 5)
-                                                        {{'Plieger Team'}}
+                                                    @if($admin['role_id'] == 6)
+                                                        {{'Hank Team'}}
                                                     @endif
                                                     </td>
                                                 </tr>

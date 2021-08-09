@@ -26,7 +26,6 @@ class UserController extends Controller
     
     public function index()
 	{
-	    
 	    $user = Auth::user()->fname;
         $status =3;
         $total_assigned_task = Task::all()->count();

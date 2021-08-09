@@ -40,7 +40,7 @@
                 END RESPONSIVE QUICK SEARCH FORM
             </li> -->
             <li class="nav-item <?php echo ((Request::routeIs('plieger.dashboard'))? 'active': '') ?>">
-                <a href="{{ route('member.dashboard') }}" class="nav-link nav-toggle">
+                <a href="{{ route('plieger.dashboard') }}" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Dashboard</span>
                     <span class="selected"></span>

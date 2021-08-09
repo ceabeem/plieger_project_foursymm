@@ -133,6 +133,7 @@
                                             <option value="3">Datacircle Member</option>
                                             <option value="4">GIS Memeber</option>
                                             <option value="5">Datacircle & GIS Member</option>
+                                            <option value="6">Henk</option>
                                          </select> 
                                     </div>
                                 </div>

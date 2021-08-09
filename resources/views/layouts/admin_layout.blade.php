@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Plieger</title>
+        <title>Four Symmetrons</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #1 for statistics, charts, recent events and reports" name="description" />
@@ -57,17 +57,20 @@ License: You must have a valid license purchased only from themeforest(the above
         @yield ('page-styles')
     </head>
     <!-- END HEAD -->
-@if(auth()->user()->role_id==2)
+@if(auth()->user()->role_id==3)
 <script>window.location= "{{URL::asset('/dashboard')}}";</script>
 @endif
-@if(auth()->user()->role_id==3)
+@if(auth()->user()->role_id==2)
 <script>window.location= "{{URL::asset('teamleader/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==4)
 <script>window.location= "{{URL::asset('/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==5)
-<script>window.location= "{{URL::asset('plieger/dashboard')}}";</script>
+<script>window.location= "{{URL::asset('/dashboard')}}";</script>
+@endif
+@if(auth()->user()->role_id==6)
+<script>window.location= "hank/dashboard";</script>
 @endif
 
 

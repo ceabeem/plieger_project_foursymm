@@ -14,18 +14,24 @@ class RedirectDemoController extends Controller
 	}
     public function index()
 	{
-            if(auth()->user()->role_id==1)
+            if(auth()->user()->role_id==1){
                 return redirect()->route('admin.dashboard');
-            
-            if(auth()->user()->role_id==2)
-                return redirect()->route('member.dashboard');
-            
-            if(auth()->user()->role_id==3)
+            }
+            if(auth()->user()->role_id==2){
                 return redirect()->route('teamleader.dashboard');
-            
-            if(auth()->user()->role_id==4)
+            }
+            if(auth()->user()->role_id==3){
+                return redirect()->route('datacircle.dashboard');
+            }
+            if(auth()->user()->role_id==4){
+                return redirect()->route('GIS.dashboard');
+            }
+            if(auth()->user()->role_id==5){
                 return redirect()->route('member.dashboard');
-            if(auth()->user()->role_id==5)
+            }
+
+            if(auth()->user()->role_id==6){
                 return redirect()->route('plieger.dashboard');
+            }
 	}
 }

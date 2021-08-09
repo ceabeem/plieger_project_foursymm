@@ -32,14 +32,16 @@ class AdminLoginController extends Controller
 
     		return redirect()->intended(route('admin.dashboard'));
     	
-        }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 3], $request->remember)){
-            return redirect()->intended(route('teamleader.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 2], $request->remember)){
-        return redirect()->intended(route('member.dashboard'));
+            return redirect()->intended(route('teamleader.dashboard'));
+        }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 3], $request->remember)){
+            return redirect()->intended(route('datacircle.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 4], $request->remember)){
-        return redirect()->intended(route('member.dashboard'));
+            return redirect()->intended(route('GIS.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 5], $request->remember)){
-        return redirect()->intended(route('plieger.dashboard'));
+            return redirect()->intended(route('member.dashboard'));
+        }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 6], $request->remember)){
+            return redirect()->intended(route('plieger.dashboard'));
         }
     	return redirect()->back()->withInput($request->only('email', 'remember'))->withErrors(['approve' => 'Wrong password or this account not approved yet.']);
     }

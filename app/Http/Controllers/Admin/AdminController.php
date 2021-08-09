@@ -26,17 +26,34 @@ class AdminController extends Controller
 	    
 	    $user = Auth::user()->fname;
         $status =3;
-        $total_assigned_task = Task::all()->count();
-        $remaining_task = Task::where('status',1)->count();
-        $team_leader_review = Task::where('status',2)->count();
-        $team_supervisor_review = Task::where('status',3)->count();
-        $total_finished = Task::where('status',4)->count();
-        $total_uploaded = Task::where('status',5)->count();
-        $issues_remaining = Task::where('status',6)->count();
-        $plieger_remaining = Task::where('status',7)->count();
-		$plieger_feedback = Task::where('status',8)->count();
-        return view('Admin.index',compact('plieger_remaining','total_assigned_task','remaining_task','team_leader_review','team_supervisor_review','total_finished','total_uploaded','issues_remaining','plieger_feedback'));
-	    
+        $total_assigned_task_dc = Task::where('project_id',1)->get();
+        $total_assigned_task_gis = Task::where('project_id',2)->get();
+
+
+        $remaining_task_dc = $total_assigned_task_dc->where('status',1)->count();
+        $team_leader_review_dc = $total_assigned_task_dc->where('status',2)->count();
+        $team_supervisor_review_dc = $total_assigned_task_dc->where('status',3)->count();
+        $total_finished_dc = $total_assigned_task_dc->where('status',4)->count();
+        $total_uploaded_dc = $total_assigned_task_dc->where('status',5)->count();
+        $issues_remaining_dc = $total_assigned_task_dc->where('status',6)->count();
+        $plieger_remaining_dc = $total_assigned_task_dc->where('status',7)->count();
+		$plieger_feedback_dc = $total_assigned_task_dc->where('status',8)->count();
+
+
+		$remaining_task_gis = $total_assigned_task_gis->where('status',1)->count();
+        $team_leader_review_gis = $total_assigned_task_gis->where('status',2)->count();
+        $team_supervisor_review_gis = $total_assigned_task_gis->where('status',3)->count();
+        $total_finished_gis = $total_assigned_task_gis->where('status',4)->count();
+        $total_uploaded_gis = $total_assigned_task_gis->where('status',5)->count();
+        $issues_remaining_gis = $total_assigned_task_gis->where('status',6)->count();
+        $plieger_remaining_gis = $total_assigned_task_gis->where('status',7)->count();
+		$plieger_feedback_gis = $total_assigned_task_gis->where('status',8)->count();
+
+
+        $total_assigned_task_dc = $total_assigned_task_dc->count();
+        $total_assigned_task_gis = $total_assigned_task_gis->count();
+
+        return view('Admin.index',compact('plieger_remaining_dc','total_assigned_task_dc','remaining_task_dc','team_leader_review_dc','team_supervisor_review_dc','total_finished_dc','total_uploaded_dc','issues_remaining_dc','plieger_feedback_dc','plieger_remaining_gis','total_assigned_task_gis','remaining_task_gis','team_leader_review_gis','team_supervisor_review_gis','total_finished_gis','total_uploaded_gis','issues_remaining_gis','plieger_feedback_gis'));
 	}
 	public function showchart(Request $request)
     {

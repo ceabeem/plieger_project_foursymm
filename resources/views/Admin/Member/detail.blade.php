@@ -109,13 +109,15 @@
                                                         @if($member['role_id'] == 1)
                                                             {{'Team Supervisor'}}
                                                         @elseif($member['role_id'] == 2)
-                                                            {{'Team Member'}}
-                                                        @elseif($member['role_id'] == 3)
                                                             {{'Team Leader'}}
+                                                        @elseif($member['role_id'] == 3)
+                                                            {{'Datacircle Member'}}
                                                         @elseif($member['role_id'] == 4)
-                                                            {{'Staff'}}
+                                                            {{'GIS Member'}}
                                                         @elseif($member['role_id'] == 5)
-                                                            {{'Plieger Team'}}
+                                                            {{'Datacircle GIS Menber'}}
+                                                        @elseif($member['role_id'] == 6)
+                                                            {{'Henk'}}
                                                         @else
                                                             {{'Member'}}
                                                         @endif

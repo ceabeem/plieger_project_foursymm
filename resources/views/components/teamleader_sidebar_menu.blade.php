@@ -53,35 +53,117 @@
                     <span class="selected"></span>
                 </a>
             </li>
-            <li class="nav-item <?php echo ((Request::routeIs('teamleader.assigntask'))? 'active': '') ?>">
-                <a href="{{ route('teamleader.assigntask') }}" class="nav-link nav-toggle">
-                    <i class="fa fa-tasks"></i>
-                    <span class="title">Assign Task</span>
-                    <span class="selected"></span>
-                </a>
+            <li class="nav-item 
+                            <?php 
+                                if((Request::routeIs('teamleader.assigntask',))){
+                                echo ((Request::routeIs('teamleader.assigntask'))? 'start active open': '') ;
+                                }
+                                if((Request::routeIs('teamleader.task',))){
+                                    echo ((Request::routeIs('teamleader.task'))? 'start active open': '') ;
+                                }
+                                if((Request::routeIs('teamleader.review',))){
+                                    echo ((Request::routeIs('teamleader.review'))? 'start active open': '') ;
+                                }
+                                if((Request::routeIs('teamleader.reviewpending',))){
+                                    echo ((Request::routeIs('teamleader.reviewpending'))? 'start active open': '') ;
+                                }
+                               
+                            ?>">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="fa fa-database"></i>
+                                    <span class="title">Data Circle</span>
+                                    <span class="selected"></span>
+                                    <span class="arrow open"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item <?php echo ((Request::routeIs('teamleader.assigntask'))? 'active': '') ?>">
+                                        <a href="{{ route('teamleader.assigntask') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-tasks"></i>
+                                            <span class="title">Assign Task</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item <?php echo ((Request::routeIs('teamleader.task'))? 'active': '') ?>">
+                                        <a href="{{ route('teamleader.task') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-tasks"></i>
+                                            <span class="title">Task</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item <?php echo ((Request::routeIs('teamleader.review'))? 'active': '') ?>">
+                                            <a href="{{ route('teamleader.review') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-calendar-check-o"></i>
+                                                <span class="title">Review</span>
+                                                <span class="selected"></span>
+                                            </a>
+                                        </li>
+                                    <li class="nav-item <?php echo ((Request::routeIs('teamleader.reviewpending'))? 'active': '') ?>">
+                                        <a href="{{ route('teamleader.reviewpending') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-repeat"></i>
+                                            <span class="title">Cross Review</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                
+                                </ul>
             </li>
-            <li class="nav-item <?php echo ((Request::routeIs('teamleader.task'))? 'active': '') ?>">
-                <a href="{{ route('teamleader.task') }}" class="nav-link nav-toggle">
-                    <i class="fa fa-tasks"></i>
-                    <span class="title">Task</span>
-                    <span class="selected"></span>
-                </a>
+            <li class="nav-item 
+                            <?php 
+                                if((Request::routeIs('GIS.teamleader.assigntask',))){
+                                echo ((Request::routeIs('GIS.teamleader.assigntask'))? 'start active open': '') ;
+                                }
+                                if((Request::routeIs('GIS.teamleader.task',))){
+                                    echo ((Request::routeIs('GIS.teamleader.task'))? 'start active open': '') ;
+                                }
+                                if((Request::routeIs('GIS.teamleader.review',))){
+                                    echo ((Request::routeIs('GIS.teamleader.review'))? 'start active open': '') ;
+                                }
+                                if((Request::routeIs('GIS.teamleader.reviewpending',))){
+                                    echo ((Request::routeIs('GIS.teamleader.reviewpending'))? 'start active open': '') ;
+                                }
+                               
+                            ?>">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="fa fa-database"></i>
+                                    <span class="title">GIS</span>
+                                    <span class="selected"></span>
+                                    <span class="arrow open"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item <?php echo ((Request::routeIs('GIS.teamleader.assigntask'))? 'active': '') ?>">
+                                        <a href="{{ route('GIS.teamleader.assigntask') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-tasks"></i>
+                                            <span class="title">Assign Task</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item <?php echo ((Request::routeIs('GIS.teamleader.task'))? 'active': '') ?>">
+                                        <a href="{{ route('GIS.teamleader.task') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-tasks"></i>
+                                            <span class="title">Task</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item <?php echo ((Request::routeIs('GIS.teamleader.review'))? 'active': '') ?>">
+                                            <a href="{{ route('GIS.teamleader.review') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-calendar-check-o"></i>
+                                                <span class="title">Review</span>
+                                                <span class="selected"></span>
+                                            </a>
+                                        </li>
+                                    <li class="nav-item <?php echo ((Request::routeIs('GIS.teamleader.reviewpending'))? 'active': '') ?>">
+                                        <a href="{{ route('GIS.teamleader.reviewpending') }}" class="nav-link nav-toggle">
+                                            <i class="fa fa-repeat"></i>
+                                            <span class="title">Cross Review</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                
+                                </ul>
             </li>
 
-           <li class="nav-item <?php echo ((Request::routeIs('teamleader.review'))? 'active': '') ?>">
-                <a href="{{ route('teamleader.review') }}" class="nav-link nav-toggle">
-                <i class="fa fa-calendar-check-o"></i>
-                    <span class="title">Review</span>
-                    <span class="selected"></span>
-                </a>
-            </li>
-            <li class="nav-item <?php echo ((Request::routeIs('teamleader.reviewpending'))? 'active': '') ?>">
-                <a href="{{ route('teamleader.reviewpending') }}" class="nav-link nav-toggle">
-                    <i class="fa fa-repeat"></i>
-                    <span class="title">Cross Review</span>
-                    <span class="selected"></span>
-                </a>
-            </li>
             <li class="nav-item <?php echo ((Request::routeIs('teamleader.timesheet'))? 'active': '') ?>">
                 <a href="{{ route('teamleader.timesheet') }}" class="nav-link nav-toggle">
                     <i class="fa fa-calendar"></i>

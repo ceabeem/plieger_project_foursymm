@@ -70,13 +70,13 @@ License: You must have a valid license purchased only from themeforest(the above
     window.location = "admin/dashboard";
 </script>
 @endif
-@if(auth()->user()->role_id==3)
+@if(auth()->user()->role_id==2)
 <script>
     window.location = "teamleader/dashboard";
 </script>
 @endif
-@if(auth()->user()->role_id==5)
-<script>window.location= "{{URL::asset('plieger/dashboard')}}";</script>
+@if(auth()->user()->role_id==6)
+<script>window.location= "hank/dashboard";</script>
 @endif
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
@@ -89,6 +89,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="page-logo">
                     <a href="javascript:;" class="logo-default admin-logo-title">
                         <a href="{{url('/dashboard')}}" >
+                  
                             <img src="{{ asset('aa.png') }}" style="height: 40px" alt="" />
                         </a>
                     </a>
@@ -144,10 +145,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN CONTAINER -->
         <div class="page-container">
             <!-- BEGIN SIDEBAR -->
-            @if(auth()->user()->role_id==2)
-            @include('components.member_sidebar_menu')
-            @else
-            @include('components.staff_sidebar_menu')
+            @if(auth()->user()->role_id==3)
+            @include('components.datacirclemember_sidebar_menu')
+            @elseif(auth()->user()->role_id==4)
+            @include('components.gismember_sidebar_menu')
+            @elseif(auth()->user()->role_id==5)
+            @include('components.bothmember_sidebar_menu')
             @endif
             <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->

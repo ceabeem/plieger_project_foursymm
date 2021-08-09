@@ -102,11 +102,15 @@
                                                         </strong>
                                                     </td>
                                                     <td class="text-primary">
-                                                    @if($admin['role_id'] == 2)
-                                                        {{'Team Member'}}
-                                                        @else
+                                                    @if($admin['role_id'] == 3)
+                                                        {{'Data Circle Member'}}
+                                                    @elseif($admin['role_id'] == 4)
+                                                        {{'GSI Member'}}
+                                                    @elseif($admin['role_id'] == 5)
+                                                        {{'Data Circle and GSI Member'}}
+                                                    @else
                                                         {{'Staff'}}
-                                                        @endif
+                                                    @endif
                                                     </td>
                                                 </tr>
 

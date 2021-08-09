@@ -342,6 +342,7 @@ function appendCommunityServices(pendings) {
                    }
                },
                 error: function (request, status, errorThrown) {
+                    console.log(errorThrown);
                     aa=request.responseJSON;
                     jQuery.each(aa, function(index, item) {
                         jQuery.each(item, function(indexx, itemx) {
