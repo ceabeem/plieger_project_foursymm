@@ -59,7 +59,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $remaining_task_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $remaining_task_gis ?>">0</span></div>
                 <div class="desc"> Remaining Task </div>
             </div>
@@ -76,7 +76,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $team_leader_review_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $team_leader_review_gis ?>">0</span>
                 </div>
                 <div class="desc">TeamLeader Reviewing Files </div>
@@ -94,7 +94,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $team_supervisor_review_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $team_supervisor_review_gis ?>">0</span>
                 </div>
                 <div class="desc">Supervisor Reviewing Files </div>
@@ -112,7 +112,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_finished_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $total_finished_gis ?>">0</span>
                 </div>
                 <div class="desc"> Total Finished </div>
@@ -130,7 +130,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span> 
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_uploaded_dc ?>">0</span> 
                     <span data-counter="counterup" data-value="<?php echo $total_uploaded_gis ?>">0</span></div>
                 <div class="desc"> Total Uploaded </div>
             </div>
@@ -147,7 +147,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;"> 
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $issues_remaining_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $issues_remaining_gis ?>">0</span></div>
                 <div class="desc"> Issues Task Remaining </div>
             </div>
@@ -164,7 +164,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $plieger_remaining_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $plieger_remaining_gis ?>">0</span></div>
                 <div class="desc"> Remaining Henk Review </div>
             </div>
@@ -181,7 +181,7 @@
                     <span>GIS</span>
                 </div>
                 <div class="number" style="padding-top: 10px;">
-                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $total_assigned_task_dc ?>">0</span>
+                    <span style="float: left;" data-counter="counterup" data-value="<?php echo $plieger_feedback_dc ?>">0</span>
                     <span data-counter="counterup" data-value="<?php echo $plieger_feedback_gis ?>">0</span></div>
                 <div class="desc">Henk Feedback </div>
             </div>
