@@ -55,16 +55,16 @@
             </li>
             <li class="nav-item 
                             <?php 
-                                if((Request::routeIs('teamleader.assigntask',))){
+                                if((Request::routeIs('teamleader.assigntask'))){
                                 echo ((Request::routeIs('teamleader.assigntask'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('teamleader.task',))){
+                                if((Request::routeIs('teamleader.task'))){
                                     echo ((Request::routeIs('teamleader.task'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('teamleader.review',))){
+                                if((Request::routeIs('teamleader.review'))){
                                     echo ((Request::routeIs('teamleader.review'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('teamleader.reviewpending',))){
+                                if((Request::routeIs('teamleader.reviewpending'))){
                                     echo ((Request::routeIs('teamleader.reviewpending'))? 'start active open': '') ;
                                 }
                                

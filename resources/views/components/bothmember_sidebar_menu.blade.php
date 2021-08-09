@@ -48,10 +48,10 @@
             </li>
             <li class="nav-item 
                             <?php 
-                                if((Request::routeIs('member.task',))){
+                                if((Request::routeIs('member.task'))){
                                 echo ((Request::routeIs('member.task'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('member.review',))){
+                                if((Request::routeIs('member.review'))){
                                     echo ((Request::routeIs('member.review'))? 'start active open': '') ;
                                 }
                                
@@ -83,10 +83,10 @@
             </li>
             <li class="nav-item 
                             <?php 
-                                if((Request::routeIs('GIS.member.task',))){
+                                if((Request::routeIs('GIS.member.task'))){
                                 echo ((Request::routeIs('GIS.member.task'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.member.review',))){
+                                if((Request::routeIs('GIS.member.review'))){
                                     echo ((Request::routeIs('GIS.member.review'))? 'start active open': '') ;
                                 }
                                
