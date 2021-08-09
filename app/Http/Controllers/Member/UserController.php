@@ -29,52 +29,34 @@ class UserController extends Controller
 		$total_uploaded = 5;
 		$issues_remaining = 6;
 		$plieger_remaining = 7;
-		$total_assigned_task = Task::where('project_id',1)->count();
-        $remaining_task = Task::where('project_id',1)->where(function($query) use ($remaining_status){
-			$query->where('status',$remaining_status);
-		})->count();
-        $team_leader_review = Task::where('project_id',1)->where(function($query) use ($team_leader_review_status){
-			$query->where('status',$team_leader_review_status);
-		})->count();
-        $team_supervisor_review = Task::where('project_id',1)->where(function($query) use ($team_supervisor_review_status){
-			$query->where('status',$team_supervisor_review_status);
-		})->count();
-        $total_finished = Task::where('project_id',1)->where(function($query) use ($total_finished){
-			$query->where('status',$total_finished);
-		})->count();
-        $total_uploaded = Task::where('project_id',1)->where(function($query) use ($total_uploaded){
-			$query->where('status',$total_uploaded);
-		})->count();
-        $issues_remaining = Task::where('project_id',1)->where(function($query) use ($issues_remaining){
-			$query->where('status',$issues_remaining);
-		})->count();
-        $plieger_remaining = Task::where('project_id',1)->where(function($query) use ($plieger_remaining){
-			$query->where('status',$plieger_remaining);
-		})->count();
-		$total_assigned_task1 = Task::where('project_id',2)->count();
-        $remaining_task1 = Task::where('project_id',2)->where(function($query) use ($remaining_status){
-			$query->where('status',$remaining_status);
-		})->count();
-        $team_leader_review1 = Task::where('project_id',2)->where(function($query) use ($team_leader_review_status){
-			$query->where('status',$team_leader_review_status);
-		})->count();
-        $team_supervisor_review1 = Task::where('project_id',2)->where(function($query) use ($team_supervisor_review_status){
-			$query->where('status',$team_supervisor_review_status);
-		})->count();
-        $total_finished1 = Task::where('project_id',2)->where(function($query) use ($total_finished){
-			$query->where('status',$total_finished);
-		})->count();
-        $total_uploaded1 = Task::where('project_id',2)->where(function($query) use ($total_uploaded){
-			$query->where('status',$total_uploaded);
-		})->count();
-        $issues_remaining1 = Task::where('project_id',2)->where(function($query) use ($issues_remaining){
-			$query->where('status',$issues_remaining);
-		})->count();
-        $plieger_remaining1 = Task::where('project_id',2)->where(function($query) use ($plieger_remaining){
-			$query->where('status',$plieger_remaining);
-		})->count();
-        return view('Member.index',compact('plieger_remaining','total_assigned_task','remaining_task','team_leader_review','team_supervisor_review','total_finished','total_uploaded','issues_remaining',
-		'plieger_remaining1','total_assigned_task1','remaining_task1','team_leader_review1','team_supervisor_review1','total_finished1','total_uploaded1','issues_remaining1'));
+		$total_assigned_task_dc = Task::where('project_id',1)->get();
+        $total_assigned_task_gis = Task::where('project_id',2)->get();
+
+
+        $remaining_task_dc = $total_assigned_task_dc->where('status',1)->count();
+        $team_leader_review_dc = $total_assigned_task_dc->where('status',2)->count();
+        $team_supervisor_review_dc = $total_assigned_task_dc->where('status',3)->count();
+        $total_finished_dc = $total_assigned_task_dc->where('status',4)->count();
+        $total_uploaded_dc = $total_assigned_task_dc->where('status',5)->count();
+        $issues_remaining_dc = $total_assigned_task_dc->where('status',6)->count();
+        $plieger_remaining_dc = $total_assigned_task_dc->where('status',7)->count();
+		$plieger_feedback_dc = $total_assigned_task_dc->where('status',8)->count();
+
+
+		$remaining_task_gis = $total_assigned_task_gis->where('status',1)->count();
+        $team_leader_review_gis = $total_assigned_task_gis->where('status',2)->count();
+        $team_supervisor_review_gis = $total_assigned_task_gis->where('status',3)->count();
+        $total_finished_gis = $total_assigned_task_gis->where('status',4)->count();
+        $total_uploaded_gis = $total_assigned_task_gis->where('status',5)->count();
+        $issues_remaining_gis = $total_assigned_task_gis->where('status',6)->count();
+        $plieger_remaining_gis = $total_assigned_task_gis->where('status',7)->count();
+		$plieger_feedback_gis = $total_assigned_task_gis->where('status',8)->count();
+
+
+        $total_assigned_task_dc = $total_assigned_task_dc->count();
+        $total_assigned_task_gis = $total_assigned_task_gis->count();
+
+        return view('Member.index',compact('plieger_remaining_dc','total_assigned_task_dc','remaining_task_dc','team_leader_review_dc','team_supervisor_review_dc','total_finished_dc','total_uploaded_dc','issues_remaining_dc','plieger_feedback_dc','plieger_remaining_gis','total_assigned_task_gis','remaining_task_gis','team_leader_review_gis','team_supervisor_review_gis','total_finished_gis','total_uploaded_gis','issues_remaining_gis','plieger_feedback_gis'));
 	}
 
 
