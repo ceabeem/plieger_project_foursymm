@@ -110,16 +110,16 @@
             </li>
             <li class="nav-item 
                             <?php 
-                                if((Request::routeIs('GIS.teamleader.assigntask',))){
+                                if((Request::routeIs('GIS.teamleader.assigntask'))){
                                 echo ((Request::routeIs('GIS.teamleader.assigntask'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.teamleader.task',))){
+                                if((Request::routeIs('GIS.teamleader.task'))){
                                     echo ((Request::routeIs('GIS.teamleader.task'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.teamleader.review',))){
+                                if((Request::routeIs('GIS.teamleader.review'))){
                                     echo ((Request::routeIs('GIS.teamleader.review'))? 'start active open': '') ;
                                 }
-                                if((Request::routeIs('GIS.teamleader.reviewpending',))){
+                                if((Request::routeIs('GIS.teamleader.reviewpending'))){
                                     echo ((Request::routeIs('GIS.teamleader.reviewpending'))? 'start active open': '') ;
                                 }
                                
