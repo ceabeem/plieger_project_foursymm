@@ -34,7 +34,7 @@ float: right;
 </select>
   </div>
 <div class="dashboard_data">
-    @include('admin.index_data_ajax')
+    @include('Admin.index_data_ajax')
 </div>
 
 <!-- <div class="clearfix"></div> -->
