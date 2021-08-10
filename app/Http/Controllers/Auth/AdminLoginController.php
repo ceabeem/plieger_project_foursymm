@@ -35,9 +35,9 @@ class AdminLoginController extends Controller
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 2], $request->remember)){
             return redirect()->intended(route('teamleader.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 3], $request->remember)){
-            return redirect()->intended(route('datacircle.dashboard'));
+            return redirect()->intended(route('member.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 4], $request->remember)){
-            return redirect()->intended(route('GIS.dashboard'));
+            return redirect()->intended(route('member.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 5], $request->remember)){
             return redirect()->intended(route('member.dashboard'));
         }else if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password, 'role_id' => 6], $request->remember)){

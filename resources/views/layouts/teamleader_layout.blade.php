@@ -71,7 +71,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script>window.location= "{{URL::asset('/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==6)
-<script>window.location= "hank/dashboard";</script>
+<script>window.location= "{{URL::asset('hank/dashboard')}}";</script>
 @endif
 
 

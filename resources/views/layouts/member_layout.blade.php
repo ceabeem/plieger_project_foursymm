@@ -66,17 +66,13 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END HEAD -->
 @if(auth()->user()->role_id==1)
-<script>
-    window.location = "admin/dashboard";
-</script>
+<script>window.location= "{{URL::asset('admin/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==2)
-<script>
-    window.location = "teamleader/dashboard";
-</script>
+<script>window.location= "{{URL::asset('teamleader/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==6)
-<script>window.location= "hank/dashboard";</script>
+<script>window.location= "{{URL::asset('hank/dashboard')}}";</script>
 @endif
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
@@ -211,8 +207,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!-- loading ert functions -->
     <script src="{{ asset('js/ert-functions.js') }}" type="text/javascript"></script>
-    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=b56avgp03ykb6rfqe8mkyavhqeqn92g4gp25ze9ejyfy6ps8">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
    
     <script src="{{asset('js/cropperjs/dist/cropper.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>

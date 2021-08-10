@@ -66,13 +66,13 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END HEAD -->
 @if(auth()->user()->role_id==1)
-<script>window.location = "admin/dashboard";</script>
+<script>window.location= "{{URL::asset('admin/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==3)
 <script>window.location= "{{URL::asset('/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==2)
-<script>window.location = "teamleader/dashboard";</script>
+<script>window.location= "{{URL::asset('teamleader/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==4)
 <script>window.location= "{{URL::asset('/dashboard')}}";</script>

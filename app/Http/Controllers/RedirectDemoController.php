@@ -21,10 +21,10 @@ class RedirectDemoController extends Controller
                 return redirect()->route('teamleader.dashboard');
             }
             if(auth()->user()->role_id==3){
-                return redirect()->route('datacircle.dashboard');
+                return redirect()->route('member.dashboard');
             }
             if(auth()->user()->role_id==4){
-                return redirect()->route('GIS.dashboard');
+                return redirect()->route('member.dashboard');
             }
             if(auth()->user()->role_id==5){
                 return redirect()->route('member.dashboard');

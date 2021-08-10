@@ -79,7 +79,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/task/update','Admin\Datacircle\TaskController@update')->name('task.update');
         Route::get('/task/delete/{task}','Admin\Datacircle\TaskController@delete')->name('task.delete');
         Route::get('/task/view/{task}','Admin\Datacircle\TaskController@view')->name('task.view');
-        // Route::get('/abort','Admin\Datacircle\TeamController@abort')->name('team.abort');
         Route::post('/task/search','Admin\Datacircle\TaskController@search')->name('task.search');
         Route::get('/task/getMoreTasks','Admin\Datacircle\TaskController@getMoreTasks')->name('task.getMoreTasks');
         Route::get('tasksummary','Admin\Datacircle\TaskSummaryController@index')->name('admin.tasksummary');
@@ -113,7 +112,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/finish/update','Admin\Datacircle\ReviewController@update')->name('finish.update');
         Route::get('/finish/upload/{finish}','Admin\Datacircle\ReviewController@upload')->name('finish.upload');
         Route::get('/datacircle/upload','Admin\Datacircle\ReviewController@uploadtask')->name('admin.upload');
-        // Route::get('/abort','Admin\Datacircle\TeamController@abort')->name('team.abort');
         Route::get('/review/getMoreReviews','Admin\Datacircle\ReviewController@getMoreReviews')->name('review.getMoreReviews');
         Route::get('/finish/getMoreFinish','Admin\Datacircle\ReviewController@getMoreFinish')->name('finish.getMoreFinish');
         Route::get('/upload/getMoreUpload','Admin\Datacircle\ReviewController@getMoreUpload')->name('upload.getMoreUpload');
@@ -122,7 +120,6 @@ Route::prefix('admin')->group(function () {
         //Issue
         Route::get('issue','Admin\Datacircle\IssueController@index')->name('admin.issue');
         Route::get('/issue/reassign/{issue}','Admin\Datacircle\IssueController@issue')->name('issue.reassign');
-        // Route::get('/abort','Admin\Datacircle\TeamController@abort')->name('team.abort');
         Route::get('/issue/getMoreIssue','Admin\Datacircle\IssueController@getMoreIssue')->name('finish.getMoreIssue');
         //End of Issue
     });
@@ -381,6 +378,7 @@ Route::prefix('hank')->group(function () {
     Route::get('/showchart', 'Plieger\UserController@showchart')->name('plieger.showchart'); 
     Route::get('/test', 'Plieger\UserController@test')->name('plieger.test'); 
 });
+Route::get('/showchart', 'Admin\AdminController@showchart')->name('showchart'); 
 
 
 

@@ -19,20 +19,37 @@ class UserController extends Controller
 		$this->middleware('auth:admin');
 	}
 
-	public function index()
+	public function index(Request $request)
 	{
-	    
-	    $user = Auth::user()->fname;
-        $status =3;
-        $total_assigned_task = Task::all()->count();
-        $remaining_task = Task::where('status',1)->count();
-        $team_leader_review = Task::where('status',2)->count();
-        $team_supervisor_review = Task::where('status',3)->count();
-        $total_finished = Task::where('status',4)->count();
-        $total_uploaded = Task::where('status',5)->count();
-        $issues_remaining = Task::where('status',6)->count();
-        $plieger_remaining = Task::where('status',7)->count();
-        return view('TeamLeader.index',compact('plieger_remaining','total_assigned_task','remaining_task','team_leader_review','team_supervisor_review','total_finished','total_uploaded','issues_remaining'));
+		if(!$request->project_id){
+			$project_id=1;
+		}else{
+			$project_id=$request->project_id;
+		}
+		$user = Auth::user()->fname;
+		$status =3;
+		$total_assigned_task = Task::where('project_id',$project_id)->get();
+
+
+		$remaining_task = $total_assigned_task->where('status',1)->count();
+		$team_leader_review = $total_assigned_task->where('status',2)->count();
+		$team_supervisor_review = $total_assigned_task->where('status',3)->count();
+		$total_finished = $total_assigned_task->where('status',4)->count();
+		$total_uploaded = $total_assigned_task->where('status',5)->count();
+		$issues_remaining = $total_assigned_task->where('status',6)->count();
+		$plieger_remaining = $total_assigned_task->where('status',7)->count();
+		$plieger_feedback = $total_assigned_task->where('status',8)->count();
+
+
+		$total_assigned_task = $total_assigned_task->count();
+		// return response($total_assigned_task);
+		if($request->ajax())
+		{
+			return view('TeamLeader.index_data_ajax',compact('project_id','plieger_remaining','total_assigned_task','remaining_task','team_leader_review','team_supervisor_review','total_finished','total_uploaded','issues_remaining','plieger_feedback'))->render();
+
+		}
+
+		return view('TeamLeader.index',compact('project_id','plieger_remaining','total_assigned_task','remaining_task','team_leader_review','team_supervisor_review','total_finished','total_uploaded','issues_remaining','plieger_feedback'));
 	}
 	public function detail()
     {
