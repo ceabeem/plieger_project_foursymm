@@ -73,7 +73,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('datacircle')->group(function () {
 
         Route::get('task','Admin\Datacircle\TaskController@index')->name('admin.task');
-        Route::get('/task/getallmembers','Admin\Datacircle\TaskController@getallmembers')->name('task.getallmembers');
+        Route::get('/task/getallmembers','Admin\Datacircle\TaskController@getallmembers')->name('datacircle.task.getallmembers');
         Route::post('/task/store','Admin\Datacircle\TaskController@store')->name('task.store');
         Route::get('/task/{task}/edit','Admin\Datacircle\TaskController@edit')->name('task.edit');
         Route::post('/task/update','Admin\Datacircle\TaskController@update')->name('task.update');
@@ -129,7 +129,7 @@ Route::prefix('admin')->group(function () {
     //task
     Route::prefix('gis')->group(function () {
         Route::get('task','Admin\GIS\TaskController@index')->name('GIS.task');
-        Route::get('/task/getallmembers','Admin\GIS\TaskController@getallmembers')->name('task.getallmembers');
+        Route::get('/task/getallmembers','Admin\GIS\TaskController@getallmembers')->name('gis.task.getallmembers');
         Route::post('/task/store','Admin\GIS\TaskController@store')->name('task.store');
         Route::get('/task/{task}/edit','Admin\GIS\TaskController@edit')->name('task.edit');
         Route::post('/task/update','Admin\GIS\TaskController@update')->name('task.update');
@@ -293,7 +293,7 @@ Route::prefix('teamleader')->group(function () {
 
      //Assign Task
      Route::get('/assigntask','TeamLeader\Datacircle\AssignTaskController@index')->name('teamleader.assigntask');
-     Route::get('/assigntask/getallmembers','TeamLeader\Datacircle\AssignTaskController@getallmembers')->name('assigntask.getallmembers');
+     Route::get('/assigntask/getallmembers','TeamLeader\Datacircle\AssignTaskController@getallmembers')->name('datacircle.assigntask.getallmembers');
      Route::post('/assigntask/store','TeamLeader\Datacircle\AssignTaskController@store')->name('assigntask.store');
      Route::get('/assigntask/{assigntask}/edit','TeamLeader\Datacircle\AssignTaskController@edit')->name('assigntask.edit');
      Route::post('/assigntask/update','TeamLeader\Datacircle\AssignTaskController@update')->name('assigntask.update');
@@ -333,7 +333,7 @@ Route::prefix('teamleader')->group(function () {
     
          //Assign Task
          Route::get('/assigntask','TeamLeader\GIS\AssignTaskController@index')->name('GIS.teamleader.assigntask');
-         Route::get('/assigntask/getallmembers','TeamLeader\GIS\AssignTaskController@getallmembers')->name('assigntask.getallmembers');
+         Route::get('/assigntask/getallmembers','TeamLeader\GIS\AssignTaskController@getallmembers')->name('gis.assigntask.getallmembers');
          Route::post('/assigntask/store','TeamLeader\GIS\AssignTaskController@store')->name('assigntask.store');
          Route::get('/assigntask/{assigntask}/edit','TeamLeader\GIS\AssignTaskController@edit')->name('assigntask.edit');
          Route::post('/assigntask/update','TeamLeader\GIS\AssignTaskController@update')->name('assigntask.update');

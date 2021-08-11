@@ -24,7 +24,7 @@ class TaskController extends Controller
     {
         $user = Auth::user()->fname;
         $flag = 0;
-        $members =Member::where('role_id','!=',1)->where('role_id','!=',4)->where(function($query) use ($flag){
+        $members =Member::where('role_id','!=',1)->where('role_id','!=',4)->where('role_id','!=',6)->where(function($query) use ($flag){
             $query->where('flag',$flag);
         } )->get();
 
@@ -153,7 +153,7 @@ class TaskController extends Controller
     {
         $status = 0 ;
         $flag = 0;
-        $member_names = Member::where('role_id','!=',1)->where('role_id','!=',4)->where(function($query) use ($flag){
+        $member_names = Member::where('role_id','!=',1)->where('role_id','!=',4)->where('role_id','!=',6)->where(function($query) use ($flag){
             $query->where('flag',$flag);
         })->get();
         $status = 1;

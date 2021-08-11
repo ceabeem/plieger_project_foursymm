@@ -183,7 +183,7 @@ function appendCommunityServices(tasks) {
         {
             var member_names = [];
             $.ajax({
-                url: "{{route('task.getallmembers')}}",
+                url: "{{route('gis.task.getallmembers')}}",
                 type: 'GET',
                 dataType: 'json',
                 async:false,
