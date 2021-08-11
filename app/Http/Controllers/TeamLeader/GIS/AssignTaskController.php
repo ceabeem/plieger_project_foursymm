@@ -29,7 +29,7 @@ class AssignTaskController extends Controller
         $team = Team::where('id',$team_id)->first();
         $team_name =$team['team_name'];
         $flag = 0;
-        $members =Member::where('role_id',3)->where(function($query) use ($team_id){
+        $members =Member::where('role_id',4)->where(function($query) use ($team_id){
             $query->where('team_id',$team_id)
                 ->where('flag',0);
         } )->get();
@@ -161,7 +161,7 @@ class AssignTaskController extends Controller
         $user_id = Auth::user()->id;
         $member = Member::where('user_id',$user_id)->first();
         $team_id = $member->team_id;
-        $member_names =Member::where('role_id',3)->where(function($query) use ($team_id){
+        $member_names =Member::where('role_id',4)->where(function($query) use ($team_id){
             $query->where('team_id',$team_id)
                 ->where('flag',0);
         } )->get();

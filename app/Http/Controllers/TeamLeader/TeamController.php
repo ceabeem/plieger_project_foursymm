@@ -23,7 +23,7 @@ class TeamController extends Controller
         $user_id = Auth::user()->id;
         $member = Member::where('user_id',$user_id)->first();
         $team_id = $member->team_id;
-        $members =Member::where('role_id',2)->where(function($query) use ($team_id){
+        $members =Member::whereIn('role_id',array(3,4,5))->where(function($query) use ($team_id){
             $query->where('team_id',$team_id)
                 ->where('flag',0);
         } )->get();
