@@ -111,11 +111,11 @@
                                                         @elseif($member['role_id'] == 2)
                                                             {{'Team Leader'}}
                                                         @elseif($member['role_id'] == 3)
-                                                            {{'Datacircle Member'}}
+                                                            {{'Data Enrichment Member'}}
                                                         @elseif($member['role_id'] == 4)
-                                                            {{'GIS Member'}}
+                                                            {{'GI1 Member'}}
                                                         @elseif($member['role_id'] == 5)
-                                                            {{'Datacircle GIS Menber'}}
+                                                            {{'Data Enrichment and GI1 Menber'}}
                                                         @elseif($member['role_id'] == 6)
                                                             {{'Henk'}}
                                                         @else

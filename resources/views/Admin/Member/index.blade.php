@@ -130,9 +130,9 @@
                                             <option value ="">Choose a Role</option>
                                             <option value="1">Team Supervisor</option>
                                             <option value="2">Team Leader</option>
-                                            <option value="3">Datacircle Member</option>
-                                            <option value="4">GIS Memeber</option>
-                                            <option value="5">Datacircle & GIS Member</option>
+                                            <option value="3">Data Enrichment Member</option>
+                                            <option value="4">GI1 Memeber</option>
+                                            <option value="5">Data Enrichment & GI1 Member</option>
                                             <option value="6">Henk</option>
                                          </select> 
                                     </div>

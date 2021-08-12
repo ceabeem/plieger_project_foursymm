@@ -103,11 +103,11 @@
                                                     </td>
                                                     <td class="text-primary">
                                                     @if($admin['role_id'] == 3)
-                                                        {{'Data Circle Member'}}
+                                                        {{'Data Enrichment Member'}}
                                                     @elseif($admin['role_id'] == 4)
-                                                        {{'GSI Member'}}
+                                                        {{'GS1 Member'}}
                                                     @elseif($admin['role_id'] == 5)
-                                                        {{'Data Circle and GSI Member'}}
+                                                        {{'Data Enrichment and GS1 Member'}}
                                                     @else
                                                         {{'Staff'}}
                                                     @endif

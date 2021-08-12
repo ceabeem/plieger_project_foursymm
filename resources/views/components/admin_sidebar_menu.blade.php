@@ -106,7 +106,7 @@
                             ?>">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="fas fa-database"></i>
-                                    <span class="title">Data Circle</span>
+                                    <span class="title">Data Enrichment</span>
                                     <span class="selected"></span>
                                     <span class="arrow open"></span>
                                 </a>
@@ -202,7 +202,7 @@
                             ?>">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="fas fa-database"></i>
-                                    <span class="title">GIS</span>
+                                    <span class="title">GS1</span>
                                     <span class="selected"></span>
                                     <span class="arrow open"></span>
                                 </a>
