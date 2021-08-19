@@ -70,7 +70,7 @@ function appendCommunityServices(pendings) {
         {
             var member_names = [];
             $.ajax({
-                url: "{{route('task.getallmembers')}}",
+                url: "{{route('datacircle.task.getallmembers')}}",
                 type: 'GET',
                 dataType: 'json',
                 async:false,
@@ -418,6 +418,9 @@ function appendCommunityServices(pendings) {
                         appendCommunityServices(review);
                         toastr.success('Issue Updated.');
                    }
+               },
+               error:function(err){
+                   console.log(err);
                }
            }); 
         });
