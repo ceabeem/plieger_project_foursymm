@@ -154,6 +154,56 @@ function appendCommunityServices(pendings) {
            }); 
         });
 
+        $(document).on('click', '.editissueBtn', function(event) {
+            var e = $(this);
+            var dialog = bootbox.dialog({
+                    title: "Send Feedback",
+                    message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>',
+                }
+            );
+
+            dialog.init(function(){
+                setTimeout(function(){
+                    var pendingID = e.closest('tr').attr('data-pendingID');
+                    var rowIndex = e.closest('tr').index();
+                    // var url = 'pending/' + pendingID + '/issueedit';
+                    
+                    // var pending = "";
+                    // $.ajax({
+                    //     url:url,
+                    //     type:'get',
+                    //     async:false,
+                    //     success:function(res) {
+                    //         pending = res.pending;
+                    //     }
+                    // });
+                    
+                    
+                  var html = '<form action="" id="editreviewform" class="horizontal-form" data-rowIndex="'+rowIndex+'">'+
+                    '{{ csrf_field() }}'+
+                        '<input type="hidden" value="'+pendingID+'" name="id">'+
+                        '<div class="modal-body">'+
+                    '<div class="form-body">'+  
+                    '<div class="row">'+
+                            '<div class="col-md-12">'+
+                                '<div class="form-group">'+
+                                    '<label class="control-label">Remarks</label>'+
+                                    '<textarea required class="form-control"  value="" name="issue_remark"  cols="30" rows="10" required></textarea>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+ 
+                    '</div>'+
+                '</div>'+
+                '<div class="modal-footer">'+
+                    '<button type="button" class="btn dark btn-outline" data-dismiss="modal">Cancel</button>'+
+                    '<input class="btn green" type="submit" value="Send">'+
+                '</div>'+
+                        '</form>';
+                    dialog.find('.bootbox-body').html(html);
+                }, 500);
+            });
+        });
+
         //search Pending
         $(document).ready(function(){
             $(document).on('click','.pagination a', function(event){
