@@ -72,13 +72,23 @@
                                                 }
                                             @endphp
                                             </td>
-                                            
-                                            <td>@if($member['role_id'] == 2)
-                                            {{'Team Member'}}
-                                            @elseif($member['role_id'] == 3)
-                                            {{'Team Leader'}}
-                                            @else{{'Team Supervisor'}}
-                                            @endif</td>
+                                            <td>
+                                            @if($member['role_id'] == 1)
+                                                            {{'Team Supervisor'}}
+                                                        @elseif($member['role_id'] == 2)
+                                                            {{'Team Leader'}}
+                                                        @elseif($member['role_id'] == 3)
+                                                            {{'Data Enrichment Member'}}
+                                                        @elseif($member['role_id'] == 4)
+                                                            {{'GI1 Member'}}
+                                                        @elseif($member['role_id'] == 5)
+                                                            {{'Data Enrichment and GI1 Menber'}}
+                                                        @elseif($member['role_id'] == 6)
+                                                            {{'Henk'}}
+                                                        @else
+                                                            {{'Member'}}
+                                                        @endif
+                                            </td>
                                             <td>{{$member['total_assigned_task']}}</td>
                                             <td>{{$member['reviewed_task']}}</td>
                                         </tr>
