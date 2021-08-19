@@ -29,8 +29,8 @@ float: right;
     <label for="project">Project: </label>
 
 <select name="project" id="project">
-  <option value="1">Data Circle</option>
-  <option value="2">GIS</option>
+  <option value="1">Data Enrichment</option>
+  <option value="2">GS1</option>
 </select>
   </div>
 <div class="dashboard_data">
