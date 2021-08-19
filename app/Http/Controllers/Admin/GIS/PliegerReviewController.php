@@ -30,7 +30,7 @@ class PliegerReviewController extends Controller
         $sends = Task::where('project_id',2)->where(function($query) use ($sendstatus){
             $query->where('status',$sendstatus);
         })->paginate(10);
-        $feedbacks = Task::where('project_id',1)->where(function($query) use ($feedbackstatus){
+        $feedbacks = Task::where('project_id',2)->where(function($query) use ($feedbackstatus){
             $query->where('status',$feedbackstatus);
         })->paginate(10);
         return view('Admin.GIS.PliegerReview.index',compact('sends','user','feedbacks'))->with('no',1);
