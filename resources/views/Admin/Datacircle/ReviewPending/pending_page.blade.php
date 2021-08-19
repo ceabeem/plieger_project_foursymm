@@ -25,7 +25,7 @@
                                         <a href="javascript:;" class="btn btn-outline btn-circle btn-sm purple editBtn" style="margin: 1%"><i class="fa fa-edit"></i> Assign Review </a>
                                         <a href="{{route('pending.view',$pending['id'])}}" class="btn btn-outline btn-circle btn-sm purple "style="margin: 1%"><i class="fa fa-edit"></i>View</a>
                                         <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm red delBtn" style="margin: 1%"> <i class="fa fa-check"></i>Finished </a> 
-                                        <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm green pliegerreview" style="margin: 1%"> <i class="fa fa-repeat"></i>Send for Plieger Review </a> 
+                                        <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm green pliegerreview" style="margin: 1%"> <i class="fa fa-repeat"></i>Send for Henk Review </a> 
                                         <a href="javascript:;" class="btn btn-outline btn-circle btn-sm purple editissueBtn"style="margin: 1%"><i class="fa fa-exclamation"></i> Issue </a>  
                                            
                                                                         
