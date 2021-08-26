@@ -133,7 +133,7 @@
                 $.ajax
                 ({
                     type : 'GET',
-                    url : "{{ route('review.getMoreReviews')}}"+"?page="+page,
+                    url : "{{ route('admin.datacircle.review.getMoreReviews')}}"+"?page="+page,
                     data : {
                         'search_query' : search
                     },
