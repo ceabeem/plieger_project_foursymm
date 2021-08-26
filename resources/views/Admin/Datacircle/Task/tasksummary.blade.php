@@ -124,7 +124,7 @@
             $.ajax
             ({
                 type : 'GET',
-                url : "{{ route('tasksummary.getMoreTasks')}}"+"?page="+page,
+                url : "{{ route('datacircle.tasksummary.getMoreTasks')}}"+"?page="+page,
                 data : {
                     'search_query' : search
                 },

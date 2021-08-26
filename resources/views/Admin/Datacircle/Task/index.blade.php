@@ -459,7 +459,7 @@ function appendCommunityServices(tasks) {
             $.ajax
             ({
                 type : 'GET',
-                url : "{{ route('task.getMoreTasks')}}"+"?page="+page,
+                url : "{{ route('datacircle.task.getMoreTasks')}}"+"?page="+page,
                 data : {
                     'search_query' : search
                 },

@@ -80,10 +80,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/task/delete/{task}','Admin\Datacircle\TaskController@delete')->name('task.delete');
         Route::get('/task/view/{task}','Admin\Datacircle\TaskController@view')->name('task.view');
         Route::post('/task/search','Admin\Datacircle\TaskController@search')->name('task.search');
-        Route::get('/task/getMoreTasks','Admin\Datacircle\TaskController@getMoreTasks')->name('task.getMoreTasks');
+        Route::get('/task/getMoreTasks','Admin\Datacircle\TaskController@getMoreTasks')->name('datacircle.task.getMoreTasks');
         Route::get('tasksummary','Admin\Datacircle\TaskSummaryController@index')->name('admin.tasksummary');
         Route::post('/tasksummary/search','Admin\Datacircle\TaskSummaryController@search')->name('tasksummary.search');
-        Route::get('/tasksummary/getMoreTasks','Admin\Datacircle\TaskSummaryController@getMoreTasks')->name('tasksummary.getMoreTasks');
+        Route::get('/tasksummary/getMoreTasks','Admin\Datacircle\TaskSummaryController@getMoreTasks')->name('datacircle.tasksummary.getMoreTasks');
         Route::get('/tasksummary/download','Admin\Datacircle\TaskSummaryController@download')->name('tasksummary.download');
         //end of Task
 
