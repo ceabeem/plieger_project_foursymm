@@ -117,7 +117,7 @@
                                                         @elseif($member['role_id'] == 5)
                                                             {{'Data Enrichment and GI1 Menber'}}
                                                         @elseif($member['role_id'] == 6)
-                                                            {{'Henk'}}
+                                                            {{'Data Circle'}}
                                                         @else
                                                             {{'Member'}}
                                                         @endif

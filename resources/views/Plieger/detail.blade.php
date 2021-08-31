@@ -103,7 +103,7 @@
                                                     </td>
                                                     <td class="text-primary">
                                                     @if($admin['role_id'] == 6)
-                                                        {{'Hank Team'}}
+                                                        {{'Data Circle Team'}}
                                                     @endif
                                                     </td>
                                                 </tr>

@@ -133,7 +133,7 @@
                                             <option value="3">Data Enrichment Member</option>
                                             <option value="4">GI1 Memeber</option>
                                             <option value="5">Data Enrichment & GI1 Member</option>
-                                            <option value="6">Henk</option>
+                                            <option value="6">Data Circle</option>
                                          </select> 
                                     </div>
                                 </div>

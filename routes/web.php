@@ -361,7 +361,7 @@ Route::prefix('teamleader')->group(function () {
 });
 
 //END OF TEAM LEADER
-Route::prefix('hank')->group(function () {
+Route::prefix('data_circle')->group(function () {
     Route::get('/dashboard','Plieger\UserController@index')->name('plieger.dashboard');
     Route::get('/detail', 'Plieger\UserController@detail')->name('plieger.detail');
     Route::get('/update','Plieger\UserController@update')->name('plieger.update');

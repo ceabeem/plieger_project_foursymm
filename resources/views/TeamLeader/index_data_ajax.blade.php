@@ -98,7 +98,7 @@
             <div class="details">
                 <div class="number">
                     <span data-counter="counterup" data-value="<?php echo $plieger_remaining ?>">{{$plieger_remaining}}</span></div>
-                <div class="desc"> Remaining Henk Review </div>
+                <div class="desc"> Remaining Data Circle Review </div>
             </div>
         </a>
     </div> 
@@ -110,7 +110,7 @@
             <div class="details">
                 <div class="number">
                     <span data-counter="counterup" data-value="<?php echo $plieger_feedback ?>">{{$plieger_feedback}}</span></div>
-                <div class="desc">Henk Feedback </div>
+                <div class="desc">Data Circle Feedback </div>
             </div>
         </a>
     </div>    

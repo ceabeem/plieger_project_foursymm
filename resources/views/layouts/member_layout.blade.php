@@ -72,7 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script>window.location= "{{URL::asset('teamleader/dashboard')}}";</script>
 @endif
 @if(auth()->user()->role_id==6)
-<script>window.location= "{{URL::asset('hank/dashboard')}}";</script>
+<script>window.location= "{{URL::asset('data_circle/dashboard')}}";</script>
 @endif
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">

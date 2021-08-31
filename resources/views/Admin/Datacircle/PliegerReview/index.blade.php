@@ -38,7 +38,7 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-settings font-black"></i>
-                        <span class="caption-subject font-black sbold uppercase">File Send For Henk Review</span>
+                        <span class="caption-subject font-black sbold uppercase">File Send For Data Circle Review</span>
                     </div>
                     <div class="col-md-3 pull-right">
                         <input type="text" name="task_search1"  id="search1" class="form-control pull-right " placeholder="Search .."> 
@@ -60,7 +60,7 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-settings font-black"></i>
-                        <span class="caption-subject font-black sbold uppercase">Feedback From Henk</span>
+                        <span class="caption-subject font-black sbold uppercase">Feedback From Data Circle</span>
                     </div>
                     <div class="col-md-3 pull-right">
                         <input type="text" name="task_search"  id="search" class="form-control pull-right " placeholder="Search .."> 

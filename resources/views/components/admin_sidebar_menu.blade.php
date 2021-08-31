@@ -135,7 +135,7 @@
                                     <li class="nav-item <?php echo ((Request::routeIs('admin.pliegerreview'))? 'active': '') ?>">
                                         <a href="{{ route('admin.pliegerreview') }}" class="nav-link nav-toggle">
                                             <i class="fa fa-repeat"></i>
-                                            <span class="title">Henk Review</span>
+                                            <span class="title">Data Circle Review</span>
                                             <span class="selected"></span>
                                         </a>
                                     </li>
@@ -231,7 +231,7 @@
                                     <li class="nav-item <?php echo ((Request::routeIs('GIS.pliegerreview'))? 'active': '') ?>">
                                         <a href="{{ route('GIS.pliegerreview') }}" class="nav-link nav-toggle">
                                             <i class="fa fa-repeat"></i>
-                                            <span class="title">Henk Review</span>
+                                            <span class="title">Data Circle Review</span>
                                             <span class="selected"></span>
                                         </a>
                                     </li>
