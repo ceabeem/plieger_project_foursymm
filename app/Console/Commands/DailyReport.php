@@ -114,7 +114,7 @@ class DailyReport extends Command
 			array_push($arr,$row->email);
 		}
         $arr = array_diff($arr, array("admin@test.com", "test@plieger.com"));
-		//$arr=['prajapati.sabim@gmail.com'];
+		$arr=['prajapati.sabim@gmail.com'];
 		// dd($arr);
 		$data = array('plieger_remaining'=>$plieger_remaining,'today'=>$today,'total_assigned_task_start'=>$total_assigned_task_start,'total_assigned_task_end'=>$total_assigned_task_end,'total_assigned_task'=>$total_assigned_task,'total_assign_cmplt_task_start'=>$completed_start,'total_assign_cmplt_task_end'=>$completed_end,'total_assign_cmplt_task'=>$completed,
             'leader_done_start'=>$leader_done_start,
