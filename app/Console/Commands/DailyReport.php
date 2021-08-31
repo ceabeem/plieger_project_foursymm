@@ -44,7 +44,7 @@ class DailyReport extends Command
      */
     public function handle()
     {
-        $admin=DB::table('admins')->select('email')->where('role_id','1')->orwhere('role_id','5')->get();	
+        $admin=DB::table('admins')->select('email')->where('role_id','1')->orwhere('role_id','6')->get();	
 		$plieger_remaining = Task::where('status',7)->where('project_id',1)->count();
 		$arr = [];
 
