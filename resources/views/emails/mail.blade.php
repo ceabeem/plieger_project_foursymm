@@ -487,7 +487,7 @@ line-height: 63px !important;
           <div style="Margin-left: 20px;Margin-right: 20px;">
     <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
       <p style="Margin-top: 0;Margin-bottom: 0;"><span style="color:#283038">Dear All,<br />
-The weekly status of the regular files as of {{$today}} is as follows:</span></p>
+The weekly status of the regular files of <b>{{$project}}</b> project as of {{$today}} is as follows:</span></p>
 <table style="border: 1px solid black; margin-top: 3%">
   <thead>
     <tr style="border: 1px solid black;">

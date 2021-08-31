@@ -1,48 +1,18 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Http\Controllers;
 
-use Illuminate\Console\Command;
-use App\Admin;
-use Mail;
-use DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 use App\Task;
 use Carbon\Carbon;
 use App\Pliegerfeedback;
 use App\ReportRecord;
 
-class DailyReport extends Command
+class TestController extends Controller
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'command:daily';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Send Weekly report';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function handle()
+    public function index()
     {
         $admin=DB::table('admins')->select('email')->where('role_id','1')->orwhere('role_id','5')->get();	
 		$plieger_remaining = Task::where('status',7)->where('project_id',1)->count();
@@ -138,7 +108,7 @@ class DailyReport extends Command
             'today'=>$today,
             'project'=>'Data Enrichment'
 	    );
-		// return view('emails.mail',$data);
+		return view('emails.mail',$data);
     	Mail::send('emails.mail', $data, function($message)use ($arr) {
 			$message->to($arr)->subject('Weekly Status of Plieger Data Enrichment Project');
             $message->from('noreply@foursymmetrons.com','Plieger Nepal Team');

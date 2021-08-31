@@ -13,6 +13,7 @@
 
 Auth::routes();
 
+// Route::get('/test', 'TestController@index');
 Route::get('/', 'Auth\AdminLoginController@showLoginForm')->name('home');
 Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::get('/', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
