@@ -453,7 +453,7 @@ line-height: 63px !important;
       <div class="header" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);" id="emb-email-header-container">
       <!--[if (mso)|(IE)]><table align="center" class="header" cellpadding="0" cellspacing="0" role="presentation"><tr><td style="width: 600px"><![endif]-->
         <div class="logo emb-logo-margin-box" style="font-size: 26px;line-height: 32px;Margin-top: 12px;Margin-bottom: 18px;color: #57718a;font-family: Times,Times New Roman,serif;Margin-left: 20px;Margin-right: 20px;" align="center">
-          <div class="logo-center" style="font-size:26px !important;line-height:32px !important;" align="center" id="emb-email-header">Plieger Data Enrichment Project</div>
+          <div class="logo-center" style="font-size:26px !important;line-height:32px !important;" align="center" id="emb-email-header">DataCircle Data Enrichment Project</div>
         </div>
       <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
       </div>
@@ -525,14 +525,14 @@ The weekly status of the regular files of <b>{{$project}}</b> project as of {{$t
     </tr>
     <tr  style="border: 1px solid black;text-align: center">
       <th scope="row">5</th>
-      <td  style="border: 1px solid black;text-align: center">Total Files sent to Plieger/Henk for review</td>
+      <td  style="border: 1px solid black;text-align: center">Total Files sent to DataCircle for review</td>
       <td  style="border: 1px solid black;text-align: center">{{$Plieger_send_start}}</td>
       <td  style="border: 1px solid black;text-align: center">{{$Plieger_send_end}}</td>
       <td  style="border: 1px solid black;text-align: center">{{$Plieger_send}}</td>
     </tr>
     <tr  style="border: 1px solid black;text-align: center">
       <th scope="row">6</th>
-      <td  style="border: 1px solid black;text-align: center">Total Files reviewed from Plieger/Henk</td>
+      <td  style="border: 1px solid black;text-align: center">Total Files reviewed from DataCircle</td>
       <td  style="border: 1px solid black;text-align: center">{{$Plieger_recieve_start}}</td>
       <td  style="border: 1px solid black;text-align: center">{{$Plieger_recieve_end}}</td>
       <td  style="border: 1px solid black;text-align: center">{{$Plieger_recieve}}</td>
@@ -574,7 +574,7 @@ The weekly status of the regular files of <b>{{$project}}</b> project as of {{$t
               <div style="font-size: 12px;line-height: 19px;margin-bottom: 15px;">
                 <div>Have a nice day!<br />
 Thanks and Regards,<br />
-Plieger Nepal Team</div>
+DataCircle Nepal Team</div>
               </div>
               <div style="font-size: 12px;line-height: 19px;margin-bottom: 15px;Margin-top: 18px;">
                 

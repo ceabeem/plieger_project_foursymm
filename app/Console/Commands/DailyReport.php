@@ -140,8 +140,8 @@ class DailyReport extends Command
 	    );
 		// return view('emails.mail',$data);
     	Mail::send('emails.mail', $data, function($message)use ($arr) {
-			$message->to($arr)->subject('Weekly Status of Plieger Data Enrichment Project');
-            $message->from('noreply@foursymmetrons.com','Plieger Nepal Team');
+			$message->to($arr)->subject('Weekly Status of Data Enrichment Project');
+            $message->from('noreply@foursymmetrons.com','DataCircle Nepal Team');
 		});
         $this->info("Basic Email Sent. Check your inbox.");
 	}
