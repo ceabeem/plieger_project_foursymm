@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('command:daily')->wednesdays()->timezone('Asia/Kathmandu')->at('10:00');
+        $schedule->command('command:daily')->mondays()->timezone('Asia/Kathmandu')->at('10:00');
         // $schedule->command('command:daily')->everyFiveMinutes();
         // $schedule->command('command:testmail')->everyTwoMinutes()->withoutOverlapping();
     }
