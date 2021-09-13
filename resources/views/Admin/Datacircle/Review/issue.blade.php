@@ -124,7 +124,7 @@ function appendCommunityServices(issues) {
                 $.ajax
                 ({
                     type : 'GET',
-                    url : "{{ route('finish.getMoreIssue')}}"+"?page="+page,
+                    url : "{{ route('datacircle.finish.getMoreIssue')}}"+"?page="+page,
                     data : {
                         'search_query' : search
                     },

@@ -447,7 +447,7 @@ function appendCommunityServices(pendings) {
             $.ajax
             ({
                 type : 'GET',
-                url : "{{ route('reviewpending.getMorePliegerReview1')}}"+"?page="+page,
+                url : "{{ route('datacircle.reviewpending.getMorePliegerReview1')}}"+"?page="+page,
                 data : {
                     'search_query' : search
                 },
@@ -462,7 +462,7 @@ function appendCommunityServices(pendings) {
             $.ajax
             ({
                 type : 'GET',
-                url : "{{ route('reviewpending.getMorePliegerReview2')}}"+"?page="+page,
+                url : "{{ route('datacircle.reviewpending.getMorePliegerReview2')}}"+"?page="+page,
                 data : {
                     'search_query' : search
                 },

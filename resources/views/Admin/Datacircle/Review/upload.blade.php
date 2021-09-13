@@ -80,7 +80,7 @@
                 $.ajax
                 ({
                     type : 'GET',
-                    url : "{{ route('upload.getMoreUpload')}}"+"?page="+page,
+                    url : "{{ route('datacircle.upload.getMoreUpload')}}"+"?page="+page,
                     data : {
                         'search_query' : search
                     },

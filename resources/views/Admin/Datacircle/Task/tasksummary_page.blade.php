@@ -33,7 +33,7 @@
                                             <td>@if($task['status'] == 2 && $task['review_assigned_member'] != null)
                                             {{$task['review_assigned_member']}}
                                             @else
-                                            {{'-'}}
+                                            {{'Team Leader Review'}}
                                             @endif</td>
                                             <td>@if($task['status'] == 3)
                                             {{'Reviewing By Supervisor'}}

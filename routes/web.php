@@ -102,8 +102,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/pending/{pending}/issueedit','Admin\Datacircle\ReviewPendingController@issueedit')->name('pending.issueedit');
         Route::post('/pending/issueupdate','Admin\Datacircle\ReviewPendingController@issueupdate')->name('pending.issueupdate');
         Route::get('/reviewpending/getMorePendings','Admin\Datacircle\ReviewPendingController@getMorePendings')->name('datacircle.reviewpending.getMorePendings');
-        Route::get('/reviewpending/getMorePliegerReview1','Admin\Datacircle\PliegerReviewController@getMorePliegerReview1')->name('reviewpending.getMorePliegerReview1');
-        Route::get('/reviewpending/getMorePliegerReview2','Admin\Datacircle\PliegerReviewController@getMorePliegerReview2')->name('reviewpending.getMorePliegerReview2');
+        Route::get('/reviewpending/getMorePliegerReview1','Admin\Datacircle\PliegerReviewController@getMorePliegerReview1')->name('datacircle.reviewpending.getMorePliegerReview1');
+        Route::get('/reviewpending/getMorePliegerReview2','Admin\Datacircle\PliegerReviewController@getMorePliegerReview2')->name('datacircle.reviewpending.getMorePliegerReview2');
         //end of reviewpending
 
         //Review
@@ -114,14 +114,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/finish/upload/{finish}','Admin\Datacircle\ReviewController@upload')->name('finish.upload');
         Route::get('/datacircle/upload','Admin\Datacircle\ReviewController@uploadtask')->name('admin.upload');
         Route::get('/review/getMoreReviews','Admin\Datacircle\ReviewController@getMoreReviews')->name('admin.datacircle.review.getMoreReviews');
-        Route::get('/finish/getMoreFinish','Admin\Datacircle\ReviewController@getMoreFinish')->name('finish.getMoreFinish');
-        Route::get('/upload/getMoreUpload','Admin\Datacircle\ReviewController@getMoreUpload')->name('upload.getMoreUpload');
+        Route::get('/finish/getMoreFinish','Admin\Datacircle\ReviewController@getMoreFinish')->name('datacircle.finish.getMoreFinish');
+        Route::get('/upload/getMoreUpload','Admin\Datacircle\ReviewController@getMoreUpload')->name('datacircle.upload.getMoreUpload');
         //End of Review
 
         //Issue
         Route::get('issue','Admin\Datacircle\IssueController@index')->name('admin.issue');
         Route::get('/issue/reassign/{issue}','Admin\Datacircle\IssueController@issue')->name('issue.reassign');
-        Route::get('/issue/getMoreIssue','Admin\Datacircle\IssueController@getMoreIssue')->name('finish.getMoreIssue');
+        Route::get('/issue/getMoreIssue','Admin\Datacircle\IssueController@getMoreIssue')->name('datacircle.finish.getMoreIssue');
         //End of Issue
     });
     //END OF DATACIRCLE
@@ -159,8 +159,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/pending/{pending}/issueedit','Admin\GIS\ReviewPendingController@issueedit')->name('pending.issueedit');
         Route::post('/pending/issueupdate','Admin\GIS\ReviewPendingController@issueupdate')->name('pending.issueupdate');
         Route::get('/reviewpending/getMorePendings','Admin\GIS\ReviewPendingController@getMorePendings')->name('gis.reviewpending.getMorePendings');
-        Route::get('/reviewpending/getMorePliegerReview1','Admin\GIS\PliegerReviewController@getMorePliegerReview1')->name('reviewpending.getMorePliegerReview1');
-        Route::get('/reviewpending/getMorePliegerReview2','Admin\GIS\PliegerReviewController@getMorePliegerReview2')->name('reviewpending.getMorePliegerReview2');
+        Route::get('/reviewpending/getMorePliegerReview1','Admin\GIS\PliegerReviewController@getMorePliegerReview1')->name('gis.reviewpending.getMorePliegerReview1');
+        Route::get('/reviewpending/getMorePliegerReview2','Admin\GIS\PliegerReviewController@getMorePliegerReview2')->name('gis.reviewpending.getMorePliegerReview2');
         //end of reviewpending
 
         //Review
@@ -172,15 +172,15 @@ Route::prefix('admin')->group(function () {
         Route::get('upload','Admin\GIS\ReviewController@uploadtask')->name('GIS.upload');
         // Route::get('/abort','Admin\GIS\TeamController@abort')->name('team.abort');
         Route::get('/review/getMoreReviews','Admin\GIS\ReviewController@getMoreReviews')->name('review.getMoreReviews');
-        Route::get('/finish/getMoreFinish','Admin\GIS\ReviewController@getMoreFinish')->name('finish.getMoreFinish');
-        Route::get('/upload/getMoreUpload','Admin\GIS\ReviewController@getMoreUpload')->name('upload.getMoreUpload');
+        Route::get('/finish/getMoreFinish','Admin\GIS\ReviewController@getMoreFinish')->name('gis.finish.getMoreFinish');
+        Route::get('/upload/getMoreUpload','Admin\GIS\ReviewController@getMoreUpload')->name('gis.upload.getMoreUpload');
         //End of Review
 
         //Issue
         Route::get('issue','Admin\GIS\IssueController@index')->name('GIS.issue');
         Route::get('/issue/reassign/{issue}','Admin\GIS\IssueController@issue')->name('issue.reassign');
         // Route::get('/abort','Admin\GIS\TeamController@abort')->name('team.abort');
-        Route::get('/issue/getMoreIssue','Admin\GIS\IssueController@getMoreIssue')->name('finish.getMoreIssue');
+        Route::get('/issue/getMoreIssue','Admin\GIS\IssueController@getMoreIssue')->name('gis.finish.getMoreIssue');
     });
     //End of Issue
     //END OF GIS

@@ -244,7 +244,7 @@ function appendCommunityServices(finishs) {
                 $.ajax
                 ({
                     type : 'GET',
-                    url : "{{ route('finish.getMoreFinish')}}"+"?page="+page,
+                    url : "{{ route('datacircle.finish.getMoreFinish')}}"+"?page="+page,
                     data : {
                         'search_query' : search
                     },
