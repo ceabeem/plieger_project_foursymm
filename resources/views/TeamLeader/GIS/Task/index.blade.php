@@ -206,7 +206,7 @@ function appendCommunityServices(tasks) {
             $.ajax
             ({
                 type : 'GET',
-                url : "{{ route('member.task.getMoreTasks')}}"+"?page="+page,
+                url : "{{ route('gis.member.task.getMoreTasks')}}"+"?page="+page,
                 data : {
                     'search_query' : search
                 },

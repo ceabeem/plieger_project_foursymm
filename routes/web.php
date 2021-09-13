@@ -101,7 +101,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/pending/{view}','Admin\Datacircle\ReviewPendingController@view')->name('pending.view');
         Route::get('/pending/{pending}/issueedit','Admin\Datacircle\ReviewPendingController@issueedit')->name('pending.issueedit');
         Route::post('/pending/issueupdate','Admin\Datacircle\ReviewPendingController@issueupdate')->name('pending.issueupdate');
-        Route::get('/reviewpending/getMorePendings','Admin\Datacircle\ReviewPendingController@getMorePendings')->name('reviewpending.getMorePendings');
+        Route::get('/reviewpending/getMorePendings','Admin\Datacircle\ReviewPendingController@getMorePendings')->name('datacircle.reviewpending.getMorePendings');
         Route::get('/reviewpending/getMorePliegerReview1','Admin\Datacircle\PliegerReviewController@getMorePliegerReview1')->name('reviewpending.getMorePliegerReview1');
         Route::get('/reviewpending/getMorePliegerReview2','Admin\Datacircle\PliegerReviewController@getMorePliegerReview2')->name('reviewpending.getMorePliegerReview2');
         //end of reviewpending
@@ -158,7 +158,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/pending/{view}','Admin\GIS\ReviewPendingController@view')->name('pending.view');
         Route::get('/pending/{pending}/issueedit','Admin\GIS\ReviewPendingController@issueedit')->name('pending.issueedit');
         Route::post('/pending/issueupdate','Admin\GIS\ReviewPendingController@issueupdate')->name('pending.issueupdate');
-        Route::get('/reviewpending/getMorePendings','Admin\GIS\ReviewPendingController@getMorePendings')->name('reviewpending.getMorePendings');
+        Route::get('/reviewpending/getMorePendings','Admin\GIS\ReviewPendingController@getMorePendings')->name('gis.reviewpending.getMorePendings');
         Route::get('/reviewpending/getMorePliegerReview1','Admin\GIS\PliegerReviewController@getMorePliegerReview1')->name('reviewpending.getMorePliegerReview1');
         Route::get('/reviewpending/getMorePliegerReview2','Admin\GIS\PliegerReviewController@getMorePliegerReview2')->name('reviewpending.getMorePliegerReview2');
         //end of reviewpending
@@ -212,7 +212,7 @@ Route::prefix('datacircle')->group(function () {
     Route::get('/task/reviewed/{task}','Member\Datacircle\TaskController@reviewed')->name('member.reviewed');
     Route::get('/review/{review}/edit','Member\Datacircle\TaskController@issueedit')->name('member.issueedit');
     Route::post('/review/update','Member\Datacircle\TaskController@issueupdate')->name('member.issueupdate');
-    Route::get('/task/getMoreTasks','Member\Datacircle\TaskController@getMoreTasks')->name('member.task.getMoreTasks');
+    Route::get('/task/getMoreTasks','Member\Datacircle\TaskController@getMoreTasks')->name('datacircle.member.task.getMoreTasks');
     Route::get('review/getMoreReviews','Member\Datacircle\TaskController@getMoreReviews')->name('member.review.getMoreReviews');
 });
 //END OF DATACIRCLE
@@ -228,7 +228,7 @@ Route::get('/review','Member\GIS\TaskController@review')->name('GIS.member.revie
 Route::get('/task/reviewed/{task}','Member\GIS\TaskController@reviewed')->name('member.reviewed');
 Route::get('/review/{review}/edit','Member\GIS\TaskController@issueedit')->name('member.issueedit');
 Route::post('/review/update','Member\GIS\TaskController@issueupdate')->name('member.issueupdate');
-Route::get('/task/getMoreTasks','Member\GIS\TaskController@getMoreTasks')->name('member.task.getMoreTasks');
+Route::get('/task/getMoreTasks','Member\GIS\TaskController@getMoreTasks')->name('gis.member.task.getMoreTasks');
 Route::get('review/getMoreReviews','Member\GIS\TaskController@getMoreReviews')->name('member.review.getMoreReviews');
 });
 //END OF GIS
@@ -281,12 +281,12 @@ Route::prefix('teamleader')->group(function () {
     Route::post('/pending/update','TeamLeader\Datacircle\ReviewPendingController@update')->name('teamleader.update');
     Route::get('/pending/finish/{pending}','TeamLeader\Datacircle\ReviewPendingController@finish')->name('teamleader.finish');
     Route::get('/reviews/reviewlist/{view}','TeamLeader\Datacircle\ReviewPendingController@view')->name('teamleader.view1');
-    Route::get('/reviewpending/getMorePendings','TeamLeader\Datacircle\ReviewPendingController@getMorePendings')->name('teamleader.reviewpending.getMorePendings');
+    Route::get('/reviewpending/getMorePendings','TeamLeader\Datacircle\ReviewPendingController@getMorePendings')->name('teamleader.datacircle.reviewpending.getMorePendings');
     //end of reviewpending
 
     //Review
     Route::get('reviews','TeamLeader\Datacircle\ReviewController@index')->name('teamleader.review');
-    Route::get('/reviewpending/getMoreReviews','TeamLeader\Datacircle\ReviewController@getMoreReviews')->name('teamleader.reviewcontroller.getMoreReviews');
+    Route::get('/reviewpending/getMoreReviews','TeamLeader\Datacircle\ReviewController@getMoreReviews')->name('teamleader.datacircle.reviewcontroller.getMoreReviews');
     Route::get('/review/{review}/edit','TeamLeader\Datacircle\ReviewController@edit')->name('review.edit');
     Route::post('/review/update','TeamLeader\Datacircle\ReviewController@update')->name('review.update');
     Route::get('/review/done/{review}','TeamLeader\Datacircle\ReviewController@reviewed')->name('teamleader.reviewed');
@@ -299,7 +299,7 @@ Route::prefix('teamleader')->group(function () {
      Route::get('/assigntask/{assigntask}/edit','TeamLeader\Datacircle\AssignTaskController@edit')->name('assigntask.edit');
      Route::post('/assigntask/update','TeamLeader\Datacircle\AssignTaskController@update')->name('assigntask.update');
      Route::post('/assigntask/search','TeamLeader\Datacircle\AssignTaskController@search')->name('assigntask.search');
-     Route::get('/assigntask/getMoreTasks','TeamLeader\Datacircle\AssignTaskController@getMoreTasks')->name('assigntask.getMoreTasks');
+     Route::get('/assigntask/getMoreTasks','TeamLeader\Datacircle\AssignTaskController@getMoreTasks')->name('datacircle.assigntask.getMoreTasks');
      //End of Assign Task
     });
     //END OF DATACIRCLE
@@ -321,12 +321,12 @@ Route::prefix('teamleader')->group(function () {
         Route::post('/pending/update','TeamLeader\GIS\ReviewPendingController@update')->name('teamleader.update');
         Route::get('/pending/finish/{pending}','TeamLeader\GIS\ReviewPendingController@finish')->name('teamleader.finish');
         Route::get('/reviews/reviewlist/{view}','TeamLeader\GIS\ReviewPendingController@view')->name('teamleader.view1');
-        Route::get('/reviewpending/getMorePendings','TeamLeader\GIS\ReviewPendingController@getMorePendings')->name('teamleader.reviewpending.getMorePendings');
+        Route::get('/reviewpending/getMorePendings','TeamLeader\GIS\ReviewPendingController@getMorePendings')->name('teamleader.gis.reviewpending.getMorePendings');
         //end of reviewpending
     
         //Review
         Route::get('reviews','TeamLeader\GIS\ReviewController@index')->name('GIS.teamleader.review');
-        Route::get('/reviewpending/getMoreReviews','TeamLeader\GIS\ReviewController@getMoreReviews')->name('teamleader.reviewcontroller.getMoreReviews');
+        Route::get('/reviewpending/getMoreReviews','TeamLeader\GIS\ReviewController@getMoreReviews')->name('teamleader.gis.reviewcontroller.getMoreReviews');
         Route::get('/review/{review}/edit','TeamLeader\GIS\ReviewController@edit')->name('review.edit');
         Route::post('/review/update','TeamLeader\GIS\ReviewController@update')->name('review.update');
         Route::get('/review/done/{review}','TeamLeader\GIS\ReviewController@reviewed')->name('teamleader.reviewed');
@@ -339,7 +339,7 @@ Route::prefix('teamleader')->group(function () {
          Route::get('/assigntask/{assigntask}/edit','TeamLeader\GIS\AssignTaskController@edit')->name('assigntask.edit');
          Route::post('/assigntask/update','TeamLeader\GIS\AssignTaskController@update')->name('assigntask.update');
          Route::post('/assigntask/search','TeamLeader\GIS\AssignTaskController@search')->name('assigntask.search');
-         Route::get('/assigntask/getMoreTasks','TeamLeader\GIS\AssignTaskController@getMoreTasks')->name('assigntask.getMoreTasks');
+         Route::get('/assigntask/getMoreTasks','TeamLeader\GIS\AssignTaskController@getMoreTasks')->name('gis.assigntask.getMoreTasks');
          //End of Assign Task
         });
         //END OF GIS

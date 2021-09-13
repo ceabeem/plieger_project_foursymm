@@ -253,7 +253,7 @@ bootbox.confirm({
                 $.ajax
                 ({
                     type : 'GET',
-                    url : "{{ route('teamleader.reviewcontroller.getMoreReviews')}}"+"?page="+page,
+                    url : "{{ route('teamleader.datacircle.reviewcontroller.getMoreReviews')}}"+"?page="+page,
                     data : {
                         'search_query' : search
                     },

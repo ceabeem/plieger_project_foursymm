@@ -441,7 +441,7 @@ function appendCommunityServices(pendings) {
             $.ajax
             ({
                 type : 'GET',
-                url : "{{ route('reviewpending.getMorePendings')}}"+"?page="+page,
+                url : "{{ route('gis.reviewpending.getMorePendings')}}"+"?page="+page,
                 data : {
                     'search_query' : search
                 },
